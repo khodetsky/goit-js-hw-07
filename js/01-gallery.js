@@ -36,7 +36,7 @@ function blockLinkOnImageClic(evt) {
 function openModalImage(evt) {
     const clicOnImage = evt.target.classList.contains('gallery__image');
     const modalImage = basicLightbox.create(`
-    <img src="${evt.target.dataset.source}" width="1280" height="800">
+    <img src="${evt.target.dataset.source}" width="100%" height="100%">
     `).show();
     if (!clicOnImage) {
         return;
