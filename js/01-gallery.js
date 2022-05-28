@@ -26,21 +26,18 @@ function createImagesCardsMarcup(galleryItems) {
         .join('');
 };
 
-gallery.addEventListener('click', blockLinkOnImageClic);
 gallery.addEventListener('click', openModalImage);
 
-function blockLinkOnImageClic(evt) {
-    evt.preventDefault();
-};
-
 function openModalImage(evt) {
+    evt.preventDefault();
     const clicOnImage = evt.target.classList.contains('gallery__image');
-    const modalImage = basicLightbox.create(`
-    <img src="${evt.target.dataset.source}" width="100%" height="100%">
-    `).show();
     if (!clicOnImage) {
         return;
     }
+    const modalImage = basicLightbox.create(`
+    <img src="${evt.target.dataset.source}" width="100%" height="100%">
+    `).show();
+    
     return modalImage;
 }
 
